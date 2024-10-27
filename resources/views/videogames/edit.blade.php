@@ -13,24 +13,32 @@
 <body class="background min-h-screen">
 <?php require '../resources/views/layout/header.blade.php' ?>
     <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 mt-16 container flex-grow content-fade">
-        <h1 class="text-3xl font-bold mb-4">Edit Film</h1>
+        <h1 class="text-3xl font-bold mb-4">Edit Videogame</h1>
         <form action="/update" method="POST">
-            <input type="hidden" name="id" value="<?= htmlspecialchars($film->id) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+            <input type="hidden" name="id" value="<?= htmlspecialchars($videogame->id) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
             <div class="mb-4">
                 <label for="name" class="block text-gray-700">Name:</label>
-                <input type="text" name="name" value="<?= htmlspecialchars($film->name) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                <input type="text" name="name" value="<?= htmlspecialchars($videogame->name) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
             </div>
             <div class="mb-4">
-                <label for="director" class="block text-gray-700">Director:</label>
-                <input type="text" name="director" value="<?= htmlspecialchars($film->director) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                <label for="studio" class="block text-gray-700">Studio:</label>
+                <input type="text" name="studio" value="<?= htmlspecialchars($videogame->studio) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="publisher" class="block text-gray-700">Publisher:</label>
+                <input type="text" name="publisher" value="<?= htmlspecialchars($videogame->publisher) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
             </div>
             <div class="mb-4">
                 <label for="year" class="block text-gray-700">Year:</label>
-                <input type="number" name="year" value="<?= htmlspecialchars($film->year) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                <input type="number" name="year" value="<?= htmlspecialchars($videogame->year) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="score" class="block text-gray-700">Score:</label>
+                <input type="number" name="score" value="<?= htmlspecialchars($videogame->score) ?>" min="1" max="100" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
             </div>
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Edit</button>
         </form>
-        <a href="/films" class="text-gray-500 hover:underline mt-4 block">Return</a>
+        <a href="/videogames" class="text-gray-500 hover:underline mt-4 block">Return</a>
     </div>
     <footer id="footer" class="text-white text-center mt-8 p-4">
         <?php require '../resources/views/layout/footer.blade.php' ?>

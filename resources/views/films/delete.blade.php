@@ -16,6 +16,7 @@
     <p>Vols eliminar la peli "<?= htmlspecialchars($film->name) ?>"?</p>
     <form action="/destroy" method="POST" class="mt-4">
         <input type="hidden" name="id" value="<?= $film->id ?>">
+        <input type="hidden" name="type" value="<?= 'films' ?>">
         <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">Delete</button>
     </form>
     <a href="/films" class="text-gray-500 hover:underline mt-4 block">Cancel</a>

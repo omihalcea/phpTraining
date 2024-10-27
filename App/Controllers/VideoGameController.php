@@ -10,7 +10,7 @@ class VideoGameController
     public function index()
     {
         //obtenim tots els jocs
-        $videogame = Videogame::getAll();
+        $videogames = Videogame::getAll();
 
         //pasem les pelis a la vista
         return view('videogames/index', ['videogames' => $videogames]);
@@ -63,10 +63,10 @@ class VideoGameController
         }
 
         //busquem la peli
-        $film = Videogame::find($id);
+        $videogame = Videogame::find($id);
 
         //si no ens passen cap peli mostrar 404
-        if (!$videogames) {
+        if (!$videogame) {
             require '../../resources/views/errors/404.blade.php';
             return;
         }
@@ -79,7 +79,7 @@ class VideoGameController
     public function update($id, $data)
     {
         //modifiquem
-        Videogames::update($id, $data);
+        Videogame::update($id, $data);
 
         //retonem a la pàgina principal
         header('location: /videogames');
@@ -98,13 +98,14 @@ class VideoGameController
         //busquem la peli
         $videogame = Videogame::find($id);
         //retornem la vista en la peli
-        return view('films/delete', ['film' => $videogame]);
+        return view('videogames/delete', ['videogame' => $videogame]);
 
     }
 
     //funcio per eliminar la peli de la base de dades
     public function destroy($id)
     {
+
         //utilizem la funcio delete del model
         Videogame::delete($id);
 

@@ -11,10 +11,10 @@
 </head>
 
 
-<body class="background">
+<body class="background min-h-screen">
 <?php require '../resources/views/layout/header.blade.php' ?>
 
-<div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 mt-16 container content-fade">
+<div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 mt-16 container flex-grow content-fade">
     <h1 class="text-3xl font-bold mb-4">Films</h1>
     <a href="/create" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Add New Film</a>
     <table class="min-w-full mt-4 bg-white border border-gray-300">
@@ -35,7 +35,7 @@
         <?php else: ?>
             <?php foreach ($films as $film): ?>
         <tr class="border-b border-gray-200 hover:bg-gray-100">
-            <td class="py-3 px-6"><?= $film['id'] ?></td>
+            <td class="py-3 px-6"><?=$film['id'] ?></td>
             <td class="py-3 px-6"><?= htmlspecialchars($film['name']) ?></td>
             <td class="py-3 px-6"><?= htmlspecialchars($film['director']) ?></td>
             <td class="py-3 px-6"><?= htmlspecialchars($film['year']) ?></td>
@@ -54,13 +54,11 @@
 <footer id="footer" class="text-white text-center mt-8 p-4">
     <?php require '../resources/views/layout/footer.blade.php' ?>
 </footer>
+
 </body>
 <style>
     body {
         font-family: 'Poppins', sans-serif;
-        display: grid;
-        min-height: 100vh;
-        grid-template-rows: auto 1fr auto;
     }
 
     .background {
@@ -82,7 +80,7 @@
     }
 
     #footer {
-        position: relative;
+        position: absolute;
         bottom: 0;
         width: 100%;
     }

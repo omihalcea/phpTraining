@@ -15,34 +15,36 @@
 <?php require '../resources/views/layout/header.blade.php' ?>
 
 <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 mt-16 container flex-grow content-fade">
-    <h1 class="text-3xl font-bold mb-4">Films</h1>
-    <a href="/create" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Add New Film</a>
+    <h1 class="text-3xl font-bold mb-4">Videogames</h1>
+    <a href="/create" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Add New Videogame</a>
     <table class="min-w-full mt-4 bg-white border border-gray-300">
         <thead>
         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-            <th class="py-3 px-6 text-left">ID</th>
             <th class="py-3 px-6 text-left">Title</th>
-            <th class="py-3 px-6 text-left">Director</th>
-            <th class="py-3 px-6 text-left">Year</th>
+            <th class="py-3 px-6 text-left">Studio</th>
+            <th class="py-3 px-6 text-left">Publisher</th>
+            <th class="py-3 px-6 text-center">Year</th>
+            <th class="py-3 px-6 text-center">Score</th>
             <th class="py-3 px-6 text-center">Actions</th>
         </tr>
         </thead>
         <tbody class="text-gray-600 text-sm font-light">
-        <?php if (empty($films)): ?>
+        <?php if (empty($videogames)): ?>
         <tr>
             <td colspan="5" class="py-3 px-6 text-center">No hi ha pelis disponibles.</td>
         </tr>
         <?php else: ?>
-            <?php foreach ($films as $film): ?>
+            <?php foreach ($videogames as $videogame): ?>
         <tr class="border-b border-gray-200 hover:bg-gray-100">
-            <td class="py-3 px-6"><?=$film['id'] ?></td>
-            <td class="py-3 px-6"><?= htmlspecialchars($film['name']) ?></td>
-            <td class="py-3 px-6"><?= htmlspecialchars($film['director']) ?></td>
-            <td class="py-3 px-6"><?= htmlspecialchars($film['year']) ?></td>
+            <td class="py-3 px-6"><?= htmlspecialchars($videogame['name']) ?></td>
+            <td class="py-3 px-6"><?= htmlspecialchars($videogame['studio']) ?></td>
+            <td class="py-3 px-6"><?= htmlspecialchars($videogame['publisher']) ?></td>
+            <td class="py-3 px-6"><?= htmlspecialchars($videogame['year']) ?></td>
+            <td class="py-3 px-6"><?= htmlspecialchars($videogame['score']) ?></td>
             <td class="py-3 px-6 text-center">
-                <a href="/edit/<?= $film['id'] ?>" class="text-blue-500 hover:text-blue-700 mr-4">Edit</a>
-                <a href="/show/<?= $film['id'] ?>" class="text-blue-500 hover:text-blue-700 mr-4">Show</a>
-                <a href="/delete/<?= $film['id'] ?>" class="text-red-500 hover:text-red-700 ">Delete</a>
+                <a href="/edit/<?= $videogame['id'] ?>" class="text-blue-500 hover:text-blue-700 mr-4">Edit</a>
+                <a href="/show/<?= $videogame['id'] ?>" class="text-blue-500 hover:text-blue-700 mr-4">Show</a>
+                <a href="/delete/<?= $videogame['id'] ?>" class="text-red-500 hover:text-red-700 ">Delete</a>
             </td>
         </tr>
         <?php endforeach; ?>

@@ -12,22 +12,30 @@
 <body class="background min-h-screen">
 <?php require '../resources/views/layout/header.blade.php' ?>
     <div class="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6 mt-16 container flex-grow content-fade flex flex-col items-center text-center">
-        <h1 class="text-3xl font-bold mb-4">Film Info</h1>
+        <h1 class="text-3xl font-bold mb-4">Videogame Info</h1>
         <form action="/show" method="POST">
-            <input type="hidden" name="id" value="<?= htmlspecialchars($film->id) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+            <input type="hidden" name="id" value="<?= htmlspecialchars($videogame->id) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 font-bold">Name:</label>
-                <label id="name" class="block text-gray-700"><?= htmlspecialchars($film->name) ?></label>
+                <label id="name" class="block text-gray-700"><?= htmlspecialchars($videogame->name) ?></label>
             </div>
             <div class="mb-4">
-                <label for="director" class="block text-gray-700 font-bold">Director:</label>
-                <label id="director" class="block text-gray-700"><?= htmlspecialchars($film->director) ?></label>
+                <label for="studio" class="block text-gray-700 font-bold">Studio:</label>
+                <label id="studio" class="block text-gray-700"><?= htmlspecialchars($videogame->studio) ?></label>
+            </div>
+            <div class="mb-4">
+                <label for="publisher" class="block text-gray-700 font-bold">Publisher:</label>
+                <label id="publisher" class="block text-gray-700"><?= htmlspecialchars($videogame->publisher) ?></label>
             </div>
             <div class="mb-4">
                 <label for="year" class="block text-gray-700 font-bold">Year:</label>
-                <label id="year" class="block text-gray-700"><?= htmlspecialchars($film->year) ?></label>
+                <label id="year" class="block text-gray-700"><?= htmlspecialchars($videogame->year) ?></label>
             </div>
-            <a href="/films" class="text-gray-500 hover:underline mt-4 block">Return</a>
+            <div class="mb-4">
+                <label for="score" class="block text-gray-700 font-bold">Score:</label>
+                <label id="score" class="block text-gray-700"><?= htmlspecialchars($videogame->score) ?></label>
+            </div>
+            <a href="/videogames" class="text-gray-500 hover:underline mt-4 block">Return</a>
         </form>
     </div>
     <footer id="footer" class="text-white text-center mt-8 p-4">

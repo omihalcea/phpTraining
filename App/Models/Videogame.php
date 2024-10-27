@@ -6,7 +6,7 @@ use Core\App;
 
 class Videogame
 {
-    protected static $table = 'films';
+    protected static $table = 'videogames';
 
     //funcio per a que torne totes les pelis
     public static function getAll()
@@ -30,10 +30,12 @@ class Videogame
     public static function create($data)
     {
         $db = App::get('database')->getConnection();
-        $statement = $db->prepare('INSERT INTO '. static::$table . "(name, director, year) VALUES (:name, :director, :year)");
+        $statement = $db->prepare('INSERT INTO '. static::$table . "(name, studio, publisher, year, score) VALUES (:name, :studio, :publisher, :year, :score)");
         $statement->bindValue(':name', $data['name']);
-        $statement->bindValue(':director', $data['director']);
+        $statement->bindValue(':studio', $data['studio']);
+        $statement->bindValue(':publisher', $data['publisher']);
         $statement->bindValue(':year', $data['year']);
+        $statement->bindValue(':score', $data['score']);
         $statement->execute();
     }
 
@@ -41,11 +43,13 @@ class Videogame
     public static function update($id, $data)
     {
         $db = App::get('database')->getConnection();
-        $statement = $db->prepare("UPDATE ". static::$table . " SET name = :name, director = :director, year = :year WHERE id = :id");
+        $statement = $db->prepare("UPDATE ". static::$table . " SET name = :name, studio = :studio, publisher = :publisher, year = :year, score = :score WHERE id = :id");
         $statement->bindValue(':id', $id);
         $statement->bindValue(':name', $data['name']);
-        $statement->bindValue(':director', $data['director']);
+        $statement->bindValue(':studio', $data['studio']);
+        $statement->bindValue(':publisher', $data['publisher']);
         $statement->bindValue(':year', $data['year']);
+        $statement->bindValue(':score', $data['score']);
         $statement->execute();
     }
 

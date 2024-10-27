@@ -29,6 +29,7 @@
 
         <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Add Film</button>
         <a href="/films" class="text-gray-500 hover:underline mt-4 block">Return</a>
+        <input type="hidden" name="type" value="<?= 'films' ?>">
     </form>
 </div>
 <footer id="footer" class="text-white text-center mt-8 p-4">

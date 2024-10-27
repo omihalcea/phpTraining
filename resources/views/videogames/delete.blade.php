@@ -12,13 +12,14 @@
 <body class="background min-h-screen">
 <?php require '../resources/views/layout/header.blade.php' ?>
 <div class="max-w-lg w-full mx-auto bg-white shadow-md rounded-lg p-6 mt-16 flex-grow content-fade items-center text-center container">
-    <h1 class="text-3xl font-bold mb-4">Delete Film</h1>
-    <p>Vols eliminar la peli "<?= htmlspecialchars($film->name) ?>"?</p>
+    <h1 class="text-3xl font-bold mb-4">Delete Videogame</h1>
+    <p>Vols eliminar la peli "<?= htmlspecialchars($videogame->name) ?>"?</p>
     <form action="/destroy" method="POST" class="mt-4">
-        <input type="hidden" name="id" value="<?= $film->id ?>">
+        <input type="hidden" name="id" value="<?= $videogame->id ?>">
+        <input type="hidden" name="type" value="<?= 'videogames' ?>">
         <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">Delete</button>
     </form>
-    <a href="/films" class="text-gray-500 hover:underline mt-4 block">Cancel</a>
+    <a href="/videogames" class="text-gray-500 hover:underline mt-4 block">Cancel</a>
 </div>
 <footer id="footer" class="text-white text-center mt-8 p-4">
     <?php require '../resources/views/layout/footer.blade.php' ?>
