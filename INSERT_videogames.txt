@@ -1,0 +1,11 @@
+INSERT INTO videogames (name, studio, publisher, year, score) VALUES
+                                                                    ('The Legend of Zelda: Breath of the Wild', 'Nintendo', 'Nintendo', 2017, 97),
+                                                                    ('God of War', 'Santa Monica Studio', 'Sony Interactive Entertainment', 2018, 94),
+                                                                    ('Red Dead Redemption 2', 'Rockstar Games', 'Rockstar Games', 2018, 97),
+                                                                    ('The Witcher 3: Wild Hunt', 'CD Projekt Red', 'CD Projekt', 2015, 93),
+                                                                    ('Hades', 'Supergiant Games', 'Supergiant Games', 2020, 93),
+                                                                    ('Final Fantasy VII Remake', 'Square Enix', 'Square Enix', 2020, 88),
+                                                                    ('Cyberpunk 2077', 'CD Projekt Red', 'CD Projekt', 2020, 86),
+                                                                    ('Persona 5 Royal', 'Atlus', 'Atlus', 2020, 95),
+                                                                    ('Resident Evil 2', 'Capcom', 'Capcom', 2019, 91),
+                                                                    ('Spider-Man', 'Insomniac Games', 'Sony Interactive Entertainment', 2018, 87);

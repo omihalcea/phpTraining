@@ -1,0 +1,11 @@
+INSERT INTO peliculas (name, year, director) VALUES
+                                                 ('The Godfather', 1972, 'Francis Ford Coppola'),
+                                                 ('Pulp Fiction', 1994, 'Quentin Tarantino'),
+                                                 ('Inception', 2010, 'Christopher Nolan'),
+                                                 ('The Matrix', 1999, 'Lana y Lilly Wachowski'),
+                                                 ('Parasite', 2019, 'Bong Joon-ho'),
+                                                 ('La La Land', 2016, 'Damien Chazelle'),
+                                                 ('Fight Club', 1999, 'David Fincher'),
+                                                 ('Forrest Gump', 1994, 'Robert Zemeckis'),
+                                                 ('Interstellar', 2014, 'Christopher Nolan'),
+                                                 ('Whiplash', 2014, 'Damien Chazelle');

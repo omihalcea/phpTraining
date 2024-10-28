@@ -40,7 +40,7 @@
             <td class="py-3 px-6"><?= htmlspecialchars($videogame['studio']) ?></td>
             <td class="py-3 px-6"><?= htmlspecialchars($videogame['publisher']) ?></td>
             <td class="py-3 px-6"><?= htmlspecialchars($videogame['year']) ?></td>
-            <td class="py-3 px-6"><?= htmlspecialchars($videogame['score']) ?></td>
+            <td class="py-3 px-6"><?= htmlspecialchars($videogame['score']) ?>/100</td>
             <td class="py-3 px-6 text-center">
                 <a href="/edit/<?= $videogame['id'] ?>" class="text-blue-500 hover:text-blue-700 mr-4">Edit</a>
                 <a href="/show/<?= $videogame['id'] ?>" class="text-blue-500 hover:text-blue-700 mr-4">Show</a>
