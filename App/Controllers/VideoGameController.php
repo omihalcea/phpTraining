@@ -43,7 +43,6 @@ class VideoGameController
 
         //busquem la peli
         $videogame = Videogame::find($id);
-
         //si no ens passen cap peli mostrar 404
         if (!$videogame) {
             require '../../resources/views/errors/404.blade.php';
@@ -51,7 +50,7 @@ class VideoGameController
         }
 
         //retornem la vista i li passem la peli indicada
-        return view('videogames/edit', ['videogames' => $videogame]);
+        return view('videogames/edit', ['videogame' => $videogame]);
     }
 
     public function show($id)

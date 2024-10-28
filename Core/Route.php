@@ -74,32 +74,20 @@ class Route
 
         //Utilitzant POST guardem
         if ($parts[0] === 'store' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Controladors per a les seccions corresponents
-            $controllerFilm = 'App\Controllers\FilmController';
-            $controllerVideogame = 'App\Controllers\VideoGameController';
-
             // Comprovar el referer per determinar des de quina secció s'ha fet la sol·licitud POST
             if (isset($_SERVER['HTTP_REFERER'])) {
-                $referer = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
-                $refererParts = explode('/', trim($referer, '/'));
-
                 // Verificar si el referer és 'films' o 'videogames'
-                if ($refererParts[0] === 'films') {
+                if ($_POST['type'] === 'films') {
                     require '../App/Controllers/FilmController.php';
-                    $controllerInstance = new $controllerFilm();
-                } elseif ($refererParts[0] === 'videogames') {
+                    $controllerInstance = new $controller();
+                    $data = $_POST;
+                    return $controllerInstance->store($data);
+                } elseif ($_POST['type'] === 'videogames') {
                     require '../App/Controllers/VideoGameController.php';
-                    $controllerInstance = new $controllerVideogame();
-                } else {
-                    // Opcional: maneja un error si el referer no és vàlid
-                    return "Error: Referer invàlid.";
+                    $controllerInstance = new $controllerVideogames();
+                    $data = $_POST;
+                    return $controllerInstance->store($data);
                 }
-
-                // Crear una variable per a les dades de la sol·licitud POST i cridar a store
-                $data = $_POST;
-                return $controllerInstance->store($data);
-            } else {
-                return "Error: No es pot determinar la secció d'origen.";
             }
         }
 
@@ -181,16 +169,21 @@ class Route
 
         //Actualitzar en POST
         if ($parts[0] === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            require '../App/Controllers/FilmController.php';
-            //creem nova instancia
-            $controllerInstance = new $controller();
-            //creem variable per agafar les dades de la petició post
-            $data = $_POST;
+            if ($_POST['type'] === 'films') {
+                require '../App/Controllers/FilmController.php';
+                $controllerInstance = new $controller();
+                $data = $_POST;
+                return $controllerInstance->update($_POST['id'], $data);
+            } elseif ($_POST['type'] === 'videogames') {
+                require '../App/Controllers/VideoGameController.php';
+                $controllerInstance = new $controllerVideogames();
+                $data = $_POST;
+                return $controllerInstance->update($_POST['id'], $data);
+            }
             //comprovem si pasen id
             if (!isset($_POST['id'])){
                 throw new RuntimeException('No id provided');
             }
-            return $controllerInstance->update($_POST['id'], $data);
         }
 
         //si no es cap dels anteriors retornem la vista 404

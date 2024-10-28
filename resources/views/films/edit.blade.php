@@ -29,6 +29,7 @@
                 <input type="number" name="year" value="<?= htmlspecialchars($film->year) ?>" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
             </div>
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Edit</button>
+            <input type="hidden" name="type" value="<?= 'films' ?>">
         </form>
         <a href="/films" class="text-gray-500 hover:underline mt-4 block">Return</a>
     </div>

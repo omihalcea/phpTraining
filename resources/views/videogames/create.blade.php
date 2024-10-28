@@ -34,10 +34,10 @@
 
         <div class="mb-4">
             <label for="score" class="block text-sm font-medium font-bold text-gray-700">Metacritic Score:</label>
-            <input type="number" name="score" min="1" max="100" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Enter game score">
+            <input type="number" name="score" min="1" max="100" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Enter game score 0 - 100">
         </div>
 
-        <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Add Film</button>
+        <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Add Vidoegame</button>
         <a href="/videogames" class="text-gray-500 hover:underline mt-4 block">Return</a>
         <input type="hidden" name="type" value="<?= 'videogames' ?>">
     </form>
